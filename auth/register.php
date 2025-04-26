@@ -353,10 +353,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="input-group">
           <label for="password">Password</label>
           <input id="password" name="password" type="password" placeholder="Create a password" required />
+          <?php if (!empty($password_err)) echo "<p class='error-text'>$password_err</p>"; ?>
         </div>
         <div class="input-group">
           <label for="confirm_password">Confirm Password</label>
           <input id="confirm_password" name="confirm_password" type="password" placeholder="Confirm your password" required />
+          <?php if (!empty($confirm_password_err)) echo "<p class='error-text'>$confirm_password_err</p>"; ?>
         </div>
         <button class="button" type="submit">Generate</button>
       </form>

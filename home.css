@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(25, 25, 25) 50%, rgb(244, 244, 244) 50%);
+    color: rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 4em;
+    margin-top: 20vh;
+}
+
+.introtext {
+    font-size: 20px;
+    color: #1d1d1d;
+    max-width: 600px;
+    margin: 0 auto 10px;
+    line-height: 1.6;
+}
+
+.rules {
+    font-size: 18px;
+    color: #1d1d1d;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10vh;
+}
+
+.loginbutton {
+    padding: 25px 40px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #222222;
+    border-radius: 10px;
+}
+

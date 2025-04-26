@@ -1,7 +1,7 @@
 <?php
 session_start();
  if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: ../index.php");
+    header("location: ../userdash.php");
     exit;
 }
  require_once "../database/db_connection.php";
@@ -50,7 +50,7 @@ $username_err = $password_err = $login_err = "";
                                 $_SESSION["admin"] = true;
                                 header("location: ../admin/dashboard.php");
                             } else {
-                                header("location: ../game.php");
+                                header("location: ../userdash.php");
                             }
                         } else{
                             $login_err = "Invalid username or password.";
