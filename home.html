@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<html lang=”en”>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
     <title>Game of Life +</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Game of Life +</h1>
-        <div class="button">
-            <a href="auth/login.php" class="loginbutton">Login to Begin</a>
-          </div>
-        <p class="introtext">
-          Welcome to the Game of Life Simulator, a grid-based simulation where cells live, die, or evolve based on 4 simple rules.
-          <br><br>
-        </p>
-        <p class="rules">
-          Live cell with fewer than 2 neighbors dies.<br />
-          Live cell with more than 3 neighbors dies.<br />
-          Live cell with 2 or 3 neighbors survives.<br />
-          Dead cell with exactly 3 neighbors becomes alive.<br /><br />
-        </p>
-    </div>  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html">Game of Life +</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="game.html">Game</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container text-center main-content mt-5">
+      <h1 class="display-4 neon-text">Game of Life +</h1>
+
+      <div class="mt-4">
+          <a href="auth/login.php" class="btn btn-outline-info btn-lg glow-button">Login to Begin</a>
+      </div>
+
+      <p class="introtext mt-5">
+        Welcome to the Game of Life Simulator, a grid-based simulation where cells live, die, or evolve based on 4 simple rules.
+      </p>
+
+      <p class="rules mt-4">
+        <strong>Rules:</strong><br />
+        • Live cell with fewer than 2 neighbors dies.<br />
+        • Live cell with more than 3 neighbors dies.<br />
+        • Live cell with 2 or 3 neighbors survives.<br />
+        • Dead cell with exactly 3 neighbors becomes alive.<br />
+      </p>
+
+  </div>  
+
 </body>
 </html>
