@@ -34,6 +34,7 @@ $stats = getUserStats($user_id);
 <body>
   <div class="userdash">
   <h1>Welcome, <?php echo htmlspecialchars($user['username']); ?>!</h1>
+  <button onclick="logOut()">Log Out</button>
 
     
     <div class="stats">

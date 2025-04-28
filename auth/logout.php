@@ -55,7 +55,7 @@ $logged_out = true;
             <a href="login.php" class="btn btn-primary">
                 <i class="fas fa-sign-in-alt mr-2"></i>Login Again
             </a>
-            <a href="../userdash.php" class="btn btn-outline-secondary ml-2">
+            <a href="../home.html" class="btn btn-outline-secondary ml-2">
                 <i class="fas fa-home mr-2"></i>Home
             </a>
         </div>
