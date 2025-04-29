@@ -38,10 +38,10 @@ $stats = getUserStats($user_id);
 
     
     <div class="stats">
-      <p>Games Played: <?php echo $stats['total_games']; ?></p>
-      <p>Total Time: <?php echo $stats['total_time']; ?> minutes</p>
-      <p>Average Generations: <?php echo $stats['avg_generations']; ?></p>
-      <p>Max Generations: <?php echo $stats['max_generations']; ?></p>
+    <ul>
+        <li>Total Games Played: <?= $stats['total_games'] ?></li>
+        <li>Total Time Spent: <?= $stats['total_time'] ?> minutes</li>
+      </ul>
     </div>
 
 
