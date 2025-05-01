@@ -1,8 +1,7 @@
 function startGame() {
-    window.location.href = "game.html";
+    window.location.href = "game.php";
 }
 
 function logOut() {
     window.location.href = "auth/logout.php";
 }
-  

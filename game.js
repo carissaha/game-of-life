@@ -2,6 +2,7 @@ const gridSize = 30;
 let grid = [];
 let generation = 0;
 let intervalId = null;
+let lastUpdateGeneration = 0;
 
 function createGrid() {
   const gridElement = document.getElementById("grid");
@@ -82,6 +83,23 @@ function nextGen() {
 
   generation++;
   document.getElementById('generation').textContent = generation;
+  
+  if (isLoggedIn && sessionId > 0 && generation % 5 === 0 && generation !== lastUpdateGeneration) {
+    updateGenerationCount(generation);
+    lastUpdateGeneration = generation;
+  }
+}
+
+function updateGenerationCount(genCount) {
+  const formData = new FormData();
+  formData.append('session_id', sessionId);
+  formData.append('generations', genCount);
+  
+  fetch('update_generations.php', {
+    method: 'POST',
+    body: formData
+  })
+  .catch(error => console.error('Error updating generation count:', error));
 }
 
 function startGame() {
@@ -93,6 +111,9 @@ function startGame() {
 function stopGame() {
   clearInterval(intervalId);
   intervalId = null;
+    if (isLoggedIn && sessionId > 0) {
+    updateGenerationCount(generation);
+  }
 }
 
 function resetGame() {
@@ -101,6 +122,9 @@ function resetGame() {
   cells.forEach(cell => cell.classList.remove('alive'));
   generation = 0;
   document.getElementById('generation').textContent = generation;
+    if (isLoggedIn && sessionId > 0) {
+    updateGenerationCount(0);
+  }
 }
 
 function advance23() {
@@ -165,5 +189,12 @@ function activatePattern(positions) {
     }
   });
 }
+window.addEventListener('beforeunload', function() {
+  if (isLoggedIn && sessionId > 0) {
+    const formData = new FormData();
+    formData.append('session_id', sessionId);
+    navigator.sendBeacon('end_session.php', formData);
+  }
+});
 
 window.onload = createGrid;

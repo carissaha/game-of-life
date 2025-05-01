@@ -1,6 +1,15 @@
 <?php
+require_once "../database/db_connection.php";
+require_once "../game_tracking.php";
 session_start();
 $username = $_SESSION["username"] ?? "User";
+$user_id = $_SESSION["id"] ?? 0;
+if ($user_id > 0) {
+    $sql = "UPDATE game_sessions SET end_time = NOW() WHERE user_id = ? AND end_time IS NULL";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "i", $user_id);
+    mysqli_stmt_execute($stmt);
+}
 $_SESSION = array();
 session_destroy();
 $logged_out = true;
@@ -74,7 +83,7 @@ $logged_out = true;
             
             if (counter <= 0) {
                 clearInterval(timer);
-                window.location.href = '../userdash.php';
+                window.location.href = '../home.html';
             }
         }, 1000);
     </script>

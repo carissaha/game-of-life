@@ -59,7 +59,15 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo "Error creating table 'game_sessions': " . mysqli_error($conn) . "<br>";
 }
-
+$sql = "CREATE TABLE IF NOT EXISTS game_sessions (
+    session_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    start_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    end_time TIMESTAMP NULL,
+    last_activity TIMESTAMP NULL,
+    generations INT DEFAULT 0,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+)";
 $sql = "CREATE TABLE IF NOT EXISTS patterns (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
