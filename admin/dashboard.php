@@ -115,7 +115,7 @@ $top_players_result = mysqli_query($conn, $sql);
             <div class="card-body">
                 <p><a href="manage_users.php" style="display: block; padding: 10px; background: #f4f4f4; margin-bottom: 5px; text-decoration: none; color: #333; border-radius: 3px;">Manage Users</a></p>
                 <p><a href="view_sessions.php" style="display: block; padding: 10px; background: #f4f4f4; margin-bottom: 5px; text-decoration: none; color: #333; border-radius: 3px;">View Game Sessions</a></p>
-                <p><a href="../game.php" style="display: block; padding: 10px; background: #f4f4f4; text-decoration: none; color: #333; border-radius: 3px;">Play Game</a></p>
+                <p><a href="../game.html" style="display: block; padding: 10px; background: #f4f4f4; text-decoration: none; color: #333; border-radius: 3px;">Play Game</a></p>
             </div>
         </div>
     </div>
