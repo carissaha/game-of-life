@@ -47,7 +47,7 @@ $top_players_result = mysqli_query($conn, $sql);
                 <a href="dashboard.php">Dashboard</a>
                 <a href="manage_users.php">Manage Users</a>
                 <a href="view_sessions.php">Game Sessions</a>
-                <a href="../game.php">Play Game</a>
+                <a href="../game.html">Play Game</a>
                 <a href="../auth/logout.php">Logout</a>
             </span>
         </div>
